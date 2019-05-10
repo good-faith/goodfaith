@@ -12,4 +12,10 @@ interface Todo {
 
 export class AppComponent {
   todos: Todo[] = [{title: 'Todo1'}, { title: 'Todo2'}];
+
+  addTodo() {
+    this.todos.push({
+      title: `New todo ${Math.floor(Math.random() * 1000)}`
+    });
+  }
 }
