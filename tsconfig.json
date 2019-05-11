@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@goodfaith/data": ["libs/data/src/index.ts"]
+      "@goodfaith/data": ["libs/data/src/index.ts"],
+      "@goodfaith/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
