@@ -12,7 +12,8 @@
       "tags": []
     },
     "todos-e2e": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["todos"]
     },
     "api": {
       "tags": []
