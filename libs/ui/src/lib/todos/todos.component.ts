@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Todo } from '@goodfaith/data'
+import { Todo } from '@goodfaith/data';
 
 @Component({
   selector: 'goodfaith-todos',
@@ -8,7 +8,7 @@ import { Todo } from '@goodfaith/data'
 })
 export class TodosComponent implements OnInit {
   @Input() todos: Todo[];
-  
+
   constructor() { }
 
   ngOnInit() {

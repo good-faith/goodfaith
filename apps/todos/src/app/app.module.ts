@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { Data } from '@goodfaith/data';
+
 import { UiModule } from '@goodfaith/ui';
 
 
