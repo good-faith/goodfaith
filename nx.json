@@ -29,6 +29,12 @@
     },
     "admin-e2e": {
       "tags": []
+    },
+    "client": {
+      "tags": []
+    },
+    "client-e2e": {
+      "tags": []
     }
   }
 }
