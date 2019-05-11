@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-
-interface Todo {
-  title: string;
-}
+import { HttpClient } from '@angular/common/http';
+import { Todo } from '@goodfaith/data';
 
 @Component({
   selector: 'goodfaith-root',
@@ -11,7 +9,16 @@ interface Todo {
 })
 
 export class AppComponent {
-  todos: Todo[] = [{title: 'Todo1'}, { title: 'Todo2'}];
+  todos: Todo[] = [];
+
+  constructor(private http: HttpClient) {
+    this.fetch();
+  }
+
+  fetch() {
+    this.http.get<Todo[]>('/api/todos').subscribe(t => (this.todos = t));
+  }
+
 
   addTodo() {
     this.todos.push({
