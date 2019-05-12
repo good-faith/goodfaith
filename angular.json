@@ -493,6 +493,66 @@
           "styleext": "scss"
         }
       }
+    },
+    "client-home": {
+      "root": "libs/client/home",
+      "sourceRoot": "libs/client/home/src",
+      "projectType": "library",
+      "prefix": "goodfaith",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/home/tsconfig.lib.json",
+              "libs/client/home/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/client/home/jest.config.js",
+            "tsConfig": "libs/client/home/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "client-auth": {
+      "root": "libs/client/auth",
+      "sourceRoot": "libs/client/auth/src",
+      "projectType": "library",
+      "prefix": "goodfaith",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/client/auth/tsconfig.lib.json",
+              "libs/client/auth/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/client/auth/jest.config.js",
+            "tsConfig": "libs/client/auth/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
