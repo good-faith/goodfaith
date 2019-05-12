@@ -35,6 +35,9 @@
     },
     "client-e2e": {
       "tags": []
+    },
+    "admin-dashboard": {
+      "tags": []
     }
   }
 }

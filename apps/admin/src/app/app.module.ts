@@ -16,12 +16,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
+import { AdminDashboardModule, AdminDashboardRoutes } from '@goodfaith/admin/dashboard';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot([{path: 'admin-dashboard', children: AdminDashboardRoutes}], { initialNavigation: 'enabled' }),
     NxModule.forRoot(),
     StoreModule.forRoot(
       { app: appReducer },
@@ -32,7 +33,8 @@ import { storeFreeze } from 'ngrx-store-freeze';
     ),
     EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreRouterConnectingModule
+    StoreRouterConnectingModule,
+    AdminDashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
