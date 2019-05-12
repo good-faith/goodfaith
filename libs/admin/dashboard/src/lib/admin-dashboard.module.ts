@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Route } from '@angular/router'
+import { Route } from '@angular/router'
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 
 export const AdminDashboardRoutes: Route[] = [{
@@ -9,7 +9,7 @@ export const AdminDashboardRoutes: Route[] = [{
 
 
 @NgModule({
-  declarations: [DashboardViewComponent, RouterModule],
+  declarations: [DashboardViewComponent],
   imports: [
     CommonModule
   ]
