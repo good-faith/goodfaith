@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/GoodFaithParadigm8/goodfaith/tree/master.svg?style=svg)](https://circleci.com/gh/GoodFaithParadigm8/goodfaith/tree/master)
+
 # Goodfaith
 
 This project was generated using [Nx](https://nx.dev).
