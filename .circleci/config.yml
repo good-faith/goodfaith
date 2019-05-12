@@ -9,7 +9,7 @@ jobs:
         environment:
           ## this enables colors in the output
           TERM: xterm
-    working_directory: ~/goodfaith
+    working_directory: ~/app
     parallelism: 1
     steps:
       - checkout
@@ -25,15 +25,15 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run:
-          name: Running E2E tests with Cyprus
-          command: npm run c-test
-      - store_test_results:
-          path: junit-results
-      - run:
-          name: Running E2E tests with multiple reporters
-          command: npm run test-multiple
-      - store_test_results:
-          path: multiple-results
+          name: Running E2E tests with JUnit reporter
+          command: npm run todos-e2e
+      # - store_test_results:
+      #     path: junit-results
+      # - run:
+      #     name: Running E2E tests with multiple reporters
+      #     command: npm run test-multiple
+      # - store_test_results:
+      #     path: multiple-results
       - store_artifacts:
           path: cypress/videos
       - store_artifacts:
