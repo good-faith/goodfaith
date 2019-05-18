@@ -21,11 +21,11 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      # start server before starting tests
-      - run:
-          command: npm run c-test
-          background: true
-      - run: npm run e2e
+      # # start server before starting tests
+      # - run:
+      #     command: npm run start
+      #     background: true
+      # - run: npm run e2e
 
 workflows:
   version: 2
