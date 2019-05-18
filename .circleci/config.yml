@@ -21,17 +21,17 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
-      # start server before starting tests
-      - run:
-          command: npm run start
-          background: true
-      - run: npm run e2e
+      # # start server before starting tests
+      # - run:
+      #     command: npm run start
+      #     background: true
+      # - run: npm run e2e
 
-workflows:
-  version: 2
-  build:
-    jobs:
-      - test
+# workflows:
+#   version: 2
+#   build:
+#     jobs:
+#       - test
 
 
 # # Javascript Node CircleCI 2.0 configuration file
