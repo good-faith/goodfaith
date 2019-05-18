@@ -27,11 +27,11 @@ jobs:
       #     background: true
       # - run: npm run e2e
 
-# workflows:
-#   version: 2
-#   build:
-#     jobs:
-#       - test
+workflows:
+  version: 2
+  build:
+    jobs:
+      - test
 
 
 # # Javascript Node CircleCI 2.0 configuration file
