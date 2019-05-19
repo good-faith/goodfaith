@@ -22,9 +22,9 @@ jobs:
             - ~/.npm
             - ~/.cache
       # start server before starting tests
-      - run:
-          command: npm run c-cy:run
-          background: true
+      # - run:
+      #     command: npm run c-cy:run
+      #     background: true
       - run: npm run e2e
 
 workflows:
