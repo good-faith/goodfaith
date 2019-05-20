@@ -12,7 +12,7 @@
     "c-start": "my-server -p 3030",
     "c-cy:run": "cypress run",
     "c-test": "start-server-and-test start http://localhost:3030 cy:run",
-    "cy:verify": "cypress verify",  
+    "cy:verify": "cypress verify",
     "cypress:open": "cypress open",
     "affected:apps": "nx affected:apps",
     "affected:libs": "nx affected:libs",
