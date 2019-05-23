@@ -1,12 +1,12 @@
 # run the same job on 2 CI machines in parallel
 # https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
 phases:
-- phase: Test
-  queue: 'Hosted Linux Preview'
+- pool:
+  vmImage: 'ubuntu-16.04'
   steps:
   - task: NodeTool@0
     inputs:
-      versionSpec: '8.x'
+      versionSpec: '10.x'
     displayName: 'Install Node.js'
 
   # VSTS hosted Linux agents already have a LOT of dependencies preinstalled
@@ -28,5 +28,5 @@ phases:
       npm run cy:verify
     displayName: 'Cypress verify'
   - script: |
-      npm run test:ci:record
+      npm run e2e
     displayName: 'Run Cypress tests'
