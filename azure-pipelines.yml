@@ -17,7 +17,7 @@ steps:
 # so we don't have to install all recommended Cypress dependencies
 # https://on.cypress.io/continuous-integration#Dependencies
 - script: |
-    sudo apt-get update && apt-get install -y libgconf-2-4
+    sudo -s apt-get update && apt-get install -y libgconf-2-4
   displayName: 'install dependencies'
 - script: |
     npm install
