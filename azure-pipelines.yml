@@ -29,8 +29,6 @@ steps:
     npm run cy:verify
   displayName: 'Cypress verify'
 - script: |
-
-- script: |
     npm run c-start 2>&1 &
     npm run e2e
   displayName: 'Run Cypress tests'

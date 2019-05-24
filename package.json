@@ -8,7 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "nx lint && ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --headless",
     "c-start": "ng serve api",
     "c-cy:run": "cypress run",
     "c-test": "start-server-and-test c-start http://localhost:3333 e2e",
