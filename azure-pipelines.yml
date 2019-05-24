@@ -24,9 +24,9 @@ steps:
   displayName: 'npm install and build'
 # always interesting to see build-related environment variables
 # https://docs.microsoft.com/en-us/vsts/pipelines/build/variables?view=vsts
-- script: |
-    npm run print-env -- BUILD
-  displayName: 'print environment variables'
+# - script: |
+#     npm run print-env -- BUILD
+#   displayName: 'print environment variables'
 - script: |
     npm run cy:verify
   displayName: 'Cypress verify'
