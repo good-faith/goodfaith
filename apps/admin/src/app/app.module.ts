@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { AdminDashboardModule, AdminDashboardRoutes } from '@goodfaith/admin/dashboard';
+import { AuthAdminModule } from './auth-admin/auth-admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,7 +35,8 @@ import { AdminDashboardModule, AdminDashboardRoutes } from '@goodfaith/admin/das
     EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule,
-    AdminDashboardModule
+    AdminDashboardModule,
+    AuthAdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
