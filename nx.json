@@ -44,6 +44,12 @@
     },
     "client-auth": {
       "tags": []
+    },
+    "my-site": {
+      "tags": []
+    },
+    "my-site-e2e": {
+      "tags": []
     }
   }
 }
