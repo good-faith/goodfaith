@@ -65,6 +65,9 @@
     },
     "tickets-e2e": {
       "tags": []
+    },
+    "tickets-api": {
+      "tags": []
     }
   }
 }

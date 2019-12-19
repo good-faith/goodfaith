@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react';
 
-import { PageTitle } from '@goodfaith/ui-header'
+// tslint:disable-next-line: nx-enforce-module-boundaries
+import { PageTitle } from '../../../../libs/ui-header/src/lib/page-title'
 import { ApiResponse, API_URL } from '@goodfaith/api-interface'
 
 import './app.scss';

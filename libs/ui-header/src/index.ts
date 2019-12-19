@@ -1,2 +1,2 @@
 export * from './lib/ui-header.module';
-export * from './lib/page-title';
+export * from '../../../libs/ui-header/src'

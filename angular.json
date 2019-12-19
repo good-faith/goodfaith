@@ -819,7 +819,8 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "tickets:build"
+            "buildTarget": "tickets:build",
+            "proxyConfig": "apps/tickets/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -869,6 +870,60 @@
           "options": {
             "tsConfig": ["apps/tickets-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/tickets-e2e/**"]
+          }
+        }
+      }
+    },
+    "tickets-api": {
+      "root": "apps/tickets-api",
+      "sourceRoot": "apps/tickets-api/src",
+      "projectType": "application",
+      "prefix": "tickets-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/tickets-api",
+            "main": "apps/tickets-api/src/main.ts",
+            "tsConfig": "apps/tickets-api/tsconfig.app.json",
+            "assets": ["apps/tickets-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/tickets-api/src/environments/environment.ts",
+                  "with": "apps/tickets-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "tickets-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/tickets-api/tsconfig.app.json",
+              "apps/tickets-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/tickets-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/tickets-api/jest.config.js",
+            "tsConfig": "apps/tickets-api/tsconfig.spec.json"
           }
         }
       }
