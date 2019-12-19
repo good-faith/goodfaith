@@ -23,7 +23,8 @@
       "@goodfaith/client/auth": ["libs/client/auth/src/index.ts"],
       "@goodfaith/ui-header": ["libs/ui-header/src/index.ts"],
       "@goodfaith/api-interface": ["libs/api-interface/src/index.ts"]
-    }
+    },
+    "rootDir": "."
   },
   "exclude": ["node_modules", "tmp"]
 }

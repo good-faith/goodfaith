@@ -1,18 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "outDir": "./out-tsc",
     "module": "es2015",
     "types": [],
     "paths": {
-      "@src/*": [
-        "src/*.web",
-        "src/*"
-      ]
+      "@src/*": ["src/*.web", "src/*"]
     }
   },
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ]
+  "files": ["src/main.ts", "src/polyfills.ts"]
 }
