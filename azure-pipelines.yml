@@ -8,9 +8,10 @@ pool:
 
 steps:
 - task: NodeTool@0
+  displayName: 'Install Node.js'
   inputs:
     versionSpec: '10.x'
-    displayName: 'Install Node.js'
+    
     
 
 # VSTS hosted Linux agents already have a LOT of dependencies preinstalled
