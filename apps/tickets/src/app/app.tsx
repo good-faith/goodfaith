@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
+
 import './app.scss';
 
 import { Route, Link } from 'react-router-dom';
@@ -37,7 +38,7 @@ const StyledApp = styled.div`
     margin-left: 18px;
     font-size: 24px;
   }
-  
+
   .ticket {
     color: #0094ba;
     height: 36px;
