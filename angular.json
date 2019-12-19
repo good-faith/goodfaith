@@ -22,8 +22,13 @@
             "main": "apps/todos/src/main.ts",
             "polyfills": "apps/todos/src/polyfills.ts",
             "tsConfig": "apps/todos/tsconfig.app.json",
-            "assets": ["apps/todos/src/favicon.ico", "apps/todos/src/assets"],
-            "styles": ["apps/todos/src/styles.scss"],
+            "assets": [
+              "apps/todos/src/favicon.ico",
+              "apps/todos/src/assets"
+            ],
+            "styles": [
+              "apps/todos/src/styles.scss"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -79,7 +84,9 @@
               "apps/todos/tsconfig.app.json",
               "apps/todos/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -114,7 +121,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/todos-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -132,7 +141,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -161,7 +172,9 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -186,7 +199,9 @@
               "libs/data/tsconfig.lib.json",
               "libs/data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -216,7 +231,9 @@
               "libs/ui/tsconfig.lib.json",
               "libs/ui/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -253,8 +270,13 @@
             "main": "apps/admin/src/main.ts",
             "polyfills": "apps/admin/src/polyfills.ts",
             "tsConfig": "apps/admin/tsconfig.app.json",
-            "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
-            "styles": ["apps/admin/src/styles.scss"],
+            "assets": [
+              "apps/admin/src/favicon.ico",
+              "apps/admin/src/assets"
+            ],
+            "styles": [
+              "apps/admin/src/styles.scss"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -309,7 +331,9 @@
               "apps/admin/tsconfig.app.json",
               "apps/admin/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -344,7 +368,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/admin-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -368,8 +394,13 @@
             "main": "apps/client/src/main.ts",
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "apps/client/tsconfig.app.json",
-            "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"],
-            "styles": ["apps/client/src/styles.scss"],
+            "assets": [
+              "apps/client/src/favicon.ico",
+              "apps/client/src/assets"
+            ],
+            "styles": [
+              "apps/client/src/styles.scss"
+            ],
             "scripts": [],
             "es5BrowserSupport": true
           },
@@ -424,7 +455,9 @@
               "apps/client/tsconfig.app.json",
               "apps/client/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -459,7 +492,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/client-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -477,7 +512,9 @@
               "libs/admin/dashboard/tsconfig.lib.json",
               "libs/admin/dashboard/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -507,7 +544,9 @@
               "libs/client/home/tsconfig.lib.json",
               "libs/client/home/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -537,7 +576,9 @@
               "libs/client/auth/tsconfig.lib.json",
               "libs/client/auth/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -577,7 +618,9 @@
               "apps/my-site/src/favicon.ico",
               "apps/my-site/src/assets"
             ],
-            "styles": ["apps/my-site/src/styles.scss"],
+            "styles": [
+              "apps/my-site/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -624,7 +667,9 @@
               "apps/my-site/tsconfig.app.json",
               "apps/my-site/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "test": {
@@ -658,7 +703,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/my-site-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -676,7 +723,10 @@
               "libs/ui-header/tsconfig.lib.json",
               "libs/ui-header/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-header/**"
+            ]
           }
         },
         "test": {
@@ -703,7 +753,9 @@
             "outputPath": "dist/apps/my-site-api",
             "main": "apps/my-site-api/src/main.ts",
             "tsConfig": "apps/my-site-api/tsconfig.app.json",
-            "assets": ["apps/my-site-api/src/assets"]
+            "assets": [
+              "apps/my-site-api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -732,7 +784,10 @@
               "apps/my-site-api/tsconfig.app.json",
               "apps/my-site-api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/my-site-api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/my-site-api/**"
+            ]
           }
         },
         "test": {
@@ -757,7 +812,10 @@
               "libs/api-interface/tsconfig.lib.json",
               "libs/api-interface/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interface/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api-interface/**"
+            ]
           }
         },
         "test": {
@@ -787,7 +845,9 @@
               "apps/tickets/src/favicon.ico",
               "apps/tickets/src/assets"
             ],
-            "styles": ["apps/tickets/src/styles.scss"],
+            "styles": [
+              "apps/tickets/src/styles.scss"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
@@ -835,7 +895,10 @@
               "apps/tickets/tsconfig.app.json",
               "apps/tickets/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/tickets/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/tickets/**"
+            ]
           }
         },
         "test": {
@@ -868,8 +931,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/tickets-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/tickets-e2e/**"]
+            "tsConfig": [
+              "apps/tickets-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/tickets-e2e/**"
+            ]
           }
         }
       }
@@ -887,7 +955,9 @@
             "outputPath": "dist/apps/tickets-api",
             "main": "apps/tickets-api/src/main.ts",
             "tsConfig": "apps/tickets-api/tsconfig.app.json",
-            "assets": ["apps/tickets-api/src/assets"]
+            "assets": [
+              "apps/tickets-api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -916,7 +986,10 @@
               "apps/tickets-api/tsconfig.app.json",
               "apps/tickets-api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/tickets-api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/tickets-api/**"
+            ]
           }
         },
         "test": {
@@ -934,7 +1007,7 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nstudio/xplat"
   },
   "schematics": {
     "@nrwl/schematics:application": {
