@@ -53,6 +53,18 @@
     },
     "ui-header": {
       "tags": []
+    },
+    "my-site-api": {
+      "tags": []
+    },
+    "api-interface": {
+      "tags": []
+    },
+    "tickets": {
+      "tags": []
+    },
+    "tickets-e2e": {
+      "tags": []
     }
   }
 }

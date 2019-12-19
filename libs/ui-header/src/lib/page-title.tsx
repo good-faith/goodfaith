@@ -1,9 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 
 import './page-title.css';
 
 /* eslint-disable-next-line */
-export interface PageTitleProps {}
+// tslint:disable-next-line: no-empty-interface
+export interface PageTitleProps {
+}
 
 export const PageTitle = (props: PageTitleProps) => {
   return (

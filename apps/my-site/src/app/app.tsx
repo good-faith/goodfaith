@@ -1,39 +1,30 @@
 import * as React from 'react';
-import { Component } from 'react';
+import { Component, useState, useEffect } from 'react';
+
+import { PageTitle } from '../../../../libs/ui-header/src/lib/page-title'
+import { ApiResponse, API_URL } from '../../../../libs/api-interface/src'
 
 import './app.scss';
 
 export class App extends Component {
   render() {
-    const title = 'my-site';
+    
+    // tslint:disable-next-line: no-shadowed-variable
+    const [ apiResponse, setApiResponse ] = useState<ApiResponse>({message: 'Loading....'});
+    useEffect(() => {
+      fetch(API_URL).then(r => r.json()).then(setApiResponse)
+  }, [])
+
     return (
-      <div>
-        <div style={{ textAlign: 'center' }}>
-          <h1>Welcome to {title}!</h1>
-          <img
-            width="450"
-            src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
-          />
-        </div>
-        <p>
-          This is a React app built with <a href="https://nx.dev">Nx</a>.
-        </p>
-        <p>
-          🔎 **Nx is a set of Angular CLI power-ups for modern development.**
-        </p>
-        <h2>Quick Start & Documentation</h2>
-        <ul>
-          <li>
-            <a href="https://nx.dev/getting-started/what-is-nx">
-              30-minute video showing all Nx features
-            </a>
-          </li>
-          <li>
-            <a href="https://nx.dev/tutorial/01-create-application">
-              Interactive tutorial
-            </a>
-          </li>
-        </ul>
+      <div className='app' >
+        <header className="flex">
+       <main>
+         <p>
+           { apiResponse.message }
+         </p>
+       </main>
+        <PageTitle />
+        </header>
       </div>
     );
   }

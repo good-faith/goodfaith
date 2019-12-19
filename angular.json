@@ -608,7 +608,8 @@
         "serve": {
           "builder": "@nrwl/builders:web-dev-server",
           "options": {
-            "buildTarget": "my-site:build"
+            "buildTarget": "my-site:build",
+            "proxyConfig": "apps/my-site/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -688,6 +689,189 @@
         }
       },
       "schematics": {}
+    },
+    "my-site-api": {
+      "root": "apps/my-site-api",
+      "sourceRoot": "apps/my-site-api/src",
+      "projectType": "application",
+      "prefix": "my-site-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/my-site-api",
+            "main": "apps/my-site-api/src/main.ts",
+            "tsConfig": "apps/my-site-api/tsconfig.app.json",
+            "assets": ["apps/my-site-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/my-site-api/src/environments/environment.ts",
+                  "with": "apps/my-site-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "my-site-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/my-site-api/tsconfig.app.json",
+              "apps/my-site-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/my-site-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/my-site-api/jest.config.js",
+            "tsConfig": "apps/my-site-api/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "api-interface": {
+      "root": "libs/api-interface",
+      "sourceRoot": "libs/api-interface/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/api-interface/tsconfig.lib.json",
+              "libs/api-interface/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/api-interface/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/api-interface/jest.config.js",
+            "tsConfig": "libs/api-interface/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "tickets": {
+      "root": "apps/tickets",
+      "sourceRoot": "apps/tickets/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/tickets",
+            "index": "apps/tickets/src/index.html",
+            "main": "apps/tickets/src/main.tsx",
+            "polyfills": "apps/tickets/src/polyfills.ts",
+            "tsConfig": "apps/tickets/tsconfig.app.json",
+            "assets": [
+              "apps/tickets/src/favicon.ico",
+              "apps/tickets/src/assets"
+            ],
+            "styles": ["apps/tickets/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/tickets/src/environments/environment.ts",
+                  "with": "apps/tickets/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "tickets:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "tickets:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/tickets/tsconfig.app.json",
+              "apps/tickets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/tickets/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/tickets/jest.config.js",
+            "tsConfig": "apps/tickets/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "tickets-e2e": {
+      "root": "apps/tickets-e2e",
+      "sourceRoot": "apps/tickets-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/tickets-e2e/cypress.json",
+            "tsConfig": "apps/tickets-e2e/tsconfig.e2e.json",
+            "devServerTarget": "tickets:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tickets:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/tickets-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/tickets-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -703,6 +887,20 @@
     },
     "@nrwl/schematics:library": {
       "style": "scss"
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "tslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "tslint"
+      }
     }
   },
   "defaultProject": "todos"
