@@ -1,14 +1,24 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- **/
-
 import * as express from 'express';
+
+import { Ticket } from '@goodfaith/data';
 
 const app = express();
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to tickets-api!' });
+
+
+const tickets: Ticket[] = [
+  {
+    title: `Install updates`,
+    id: 1
+  },
+  {
+    title: `Restore the backup`,
+    id: 2
+  }
+];
+
+app.get('/api/tickets', (req, res) => {
+  res.send(tickets);
 });
 
 const port = process.env.port || 3333;
