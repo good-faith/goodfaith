@@ -1,13 +1,15 @@
-import * as React from 'react';
-import { Component, useState, useEffect } from 'react';
+import * as React from 'react'
+import { useState, useEffect } from 'react';
 
-import { PageTitle } from '../../../../libs/ui-header/src/lib/page-title'
-import { ApiResponse, API_URL } from '../../../../libs/api-interface/src'
+import { PageTitle } from '@goodfaith/ui-header'
+import { ApiResponse, API_URL } from '@goodfaith/api-interface'
 
 import './app.scss';
 
-export class App extends Component {
-  render() {
+
+
+export const App = () => {
+  
     
     // tslint:disable-next-line: no-shadowed-variable
     const [ apiResponse, setApiResponse ] = useState<ApiResponse>({message: 'Loading....'});
@@ -27,5 +29,4 @@ export class App extends Component {
         </header>
       </div>
     );
-  }
 }
