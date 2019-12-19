@@ -15,7 +15,7 @@ import { NxModule } from '@nrwl/nx';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { storeFreeze } from 'ngrx-store-freeze';
+
 import { AdminDashboardModule, AdminDashboardRoutes } from '@goodfaith/admin/dashboard';
 import { AuthAdminModule } from './auth-admin/auth-admin.module';
 
@@ -29,12 +29,12 @@ import { AuthAdminModule } from './auth-admin/auth-admin.module';
       { app: appReducer },
       {
         initialState: { app: appInitialState },
-        metaReducers: !environment.production ? [storeFreeze] : []
+        metaReducers: !environment.production ? [] : [], runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true }
       }
     ),
     EffectsModule.forRoot([AppEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreRouterConnectingModule,
+    StoreRouterConnectingModule.forRoot(),
     AdminDashboardModule,
     AuthAdminModule
   ],

@@ -8,7 +8,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { storeFreeze } from 'ngrx-store-freeze';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,11 +17,11 @@ import { storeFreeze } from 'ngrx-store-freeze';
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     StoreModule.forRoot(
       {},
-      { metaReducers: !environment.production ? [storeFreeze] : [] }
+      { metaReducers: !environment.production ? [] : [], runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true } }
     ),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    StoreRouterConnectingModule
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
