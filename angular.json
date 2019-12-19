@@ -661,6 +661,33 @@
           }
         }
       }
+    },
+    "ui-header": {
+      "root": "libs/ui-header",
+      "sourceRoot": "libs/ui-header/src",
+      "projectType": "library",
+      "prefix": "goodfaith",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-header/tsconfig.lib.json",
+              "libs/ui-header/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-header/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-header/jest.config.js",
+            "tsConfig": "libs/ui-header/tsconfig.spec.json",
+            "setupFile": "libs/ui-header/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {
