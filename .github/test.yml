@@ -16,5 +16,9 @@ jobs:
         with:
           # we have already installed all dependencies above
           install: false
+          # start server and wait for N seconds for it to respond before running tests.
+          start: ng serve tickets-api
+          wait-on: 'http://localhost:3333'
+          wait-on-timeout: 40 # seconds
           # Cypress tests and config file are in "e2e" folder
           working-directory: e2e
