@@ -11,7 +11,7 @@
     "e2e": "ng e2e --headless",
     "c-start": "ng serve api",
     "c-cy:run": "cypress run",
-    "c-test": "start-server-and-test c-start http://localhost:3333 e2e",
+    "c-test": "start-server-and-test c-start http://localhost:3333",
     "cy:verify": "cypress verify",
     "cypress:open": "cypress open",
     "affected:apps": "nx affected:apps",
@@ -130,7 +130,7 @@
   "main": "jest.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GoodFaithParadigm8/goodfaith.git"
+    "url": "git+https://github.com/good-faith/goodfaith.git"
   },
   "keywords": [
     "New",
@@ -142,9 +142,9 @@
   ],
   "author": "Jason Sprouse",
   "bugs": {
-    "url": "https://github.com/GoodFaithParadigm8/goodfaith/issues"
+    "url": "https://github.com/good-faith/goodfaith/issues"
   },
-  "homepage": "https://github.com/GoodFaithParadigm8/goodfaith#readme",
+  "homepage": "https://github.com/good-faith/goodfaith#readme",
   "xplat": {
     "prefix": "goodfaith",
     "framework": "angular"
