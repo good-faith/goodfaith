@@ -45,26 +45,12 @@
     "client-auth": {
       "tags": []
     },
-    "my-site": {
-      "tags": []
-    },
-    "my-site-e2e": {
-      "tags": []
-    },
-    "ui-header": {
-      "tags": []
-    },
-    "my-site-api": {
-      "tags": []
-    },
-    "api-interface": {
-      "tags": []
-    },
     "tickets": {
       "tags": []
     },
     "tickets-e2e": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": ["tickets"]
     },
     "tickets-api": {
       "tags": []
