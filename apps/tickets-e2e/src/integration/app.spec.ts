@@ -1,9 +1,17 @@
-import { getGreeting } from '../support/app.po';
+import { getTickets, getAddTicketButton} from '../support/app.po';
 
 describe('tickets', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    getGreeting().contains('Welcome to tickets!');
-  });
-});
+  it('should display tickets', () => {
+    getTickets().should(t => {
+      expect('t.length').equal(2);
+    });
+
+    getAddTicketButton().click();
+
+    getTickets().should(t => {
+      expect('t.length').equal(3);
+    });
+  })
+})
