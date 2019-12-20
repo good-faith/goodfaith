@@ -5,13 +5,13 @@ describe('tickets', () => {
 
   it('should display tickets', () => {
     getTickets().should(t => {
-      expect('t.length').equal(2);
+      expect(t.length).equal(2);
     });
 
     getAddTicketButton().click();
 
     getTickets().should(t => {
-      expect('t.length').equal(3);
+      expect(t.length).equal(3);
     });
   })
 })

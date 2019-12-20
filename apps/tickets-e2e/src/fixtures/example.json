@@ -1,4 +1,10 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io"
-}
+[
+  {
+    "id": 1,
+    "title": "Fix Skype"
+  },
+  {
+    "id": 2,
+    "title": "Fix Battery"
+  }
+]
