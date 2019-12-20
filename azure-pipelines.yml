@@ -1,3 +1,40 @@
+# run the same job on 2 CI machines in parallel
+# https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+steps:
+- task: NodeTool@0
+  displayName: 'Install Node.js'
+  inputs:
+    versionSpec: '10.x'
+    
+    
+
+# VSTS hosted Linux agents already have a LOT of dependencies preinstalled
+# https://github.com/Microsoft/vsts-agent-docker
+# so we don't have to install all recommended Cypress dependencies
+# https://on.cypress.io/continuous-integration#Dependencies
+
+- script: |
+    npm ci
+  displayName: 'npm install'
+# always interesting to see build-related environment variables
+# https://docs.microsoft.com/en-us/vsts/pipelines/build/variables?view=vsts
+# - script: |
+#     npm run print-env -- BUILD
+#   displayName: 'print environment variables'
+- script: |
+    npm run cy:verify
+  displayName: 'Cypress verify'
+- script: |
+    npm run c-start 2>&1 &
+    npm run e2e
+  displayName: 'Run Cypress tests'
+
 # # if you want to configure triggers for Azure CI see
 # # https://docs.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops&tabs=yaml#tags
 
@@ -47,48 +84,3 @@
 #         env:
 #           # avoid warnings about terminal
 #           TERM: xterm
-
-
-
-
-
-
-
-
-
-# run the same job on 2 CI machines in parallel
-# https://docs.microsoft.com/en-us/vsts/pipelines/process/phases
-trigger:
-  - master
-
-pool:
-  vmImage: 'ubuntu-16.04'
-
-steps:
-- task: NodeTool@0
-  displayName: 'Install Node.js'
-  inputs:
-    versionSpec: '10.x'
-    
-    
-
-# VSTS hosted Linux agents already have a LOT of dependencies preinstalled
-# https://github.com/Microsoft/vsts-agent-docker
-# so we don't have to install all recommended Cypress dependencies
-# https://on.cypress.io/continuous-integration#Dependencies
-
-- script: |
-    npm ci
-  displayName: 'npm install'
-# always interesting to see build-related environment variables
-# https://docs.microsoft.com/en-us/vsts/pipelines/build/variables?view=vsts
-# - script: |
-#     npm run print-env -- BUILD
-#   displayName: 'print environment variables'
-- script: |
-    npm run cy:verify
-  displayName: 'Cypress verify'
-- script: |
-    npm run c-start 2>&1 &
-    npm run e2e
-  displayName: 'Run Cypress tests'
