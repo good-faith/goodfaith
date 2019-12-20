@@ -8,5 +8,6 @@
   "video": true,
   "videosFolder": "../../dist/cypress/apps/tickets-e2e/videos",
   "screenshotsFolder": "../../dist/cypress/apps/tickets-e2e/screenshots",
-  "chromeWebSecurity": false
+  "chromeWebSecurity": false,
+  "baseUrl": "http://localhost:8081"
 }
