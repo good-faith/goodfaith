@@ -10,23 +10,20 @@ import './app.scss';
 
 
 export const App = () => {
-  
-    
-    // tslint:disable-next-line: no-shadowed-variable
     const [ apiResponse, setApiResponse ] = useState<ApiResponse>({message: 'Loading....'});
     useEffect(() => {
-      fetch(API_URL).then(r => r.json()).then(setApiResponse)
-  }, [])
+        fetch(API_URL).then(r => r.json()).then(setApiResponse)
+    }, [])
 
     return (
       <div className='app' >
         <header className="flex">
-       <main>
-         <p>
-           { apiResponse.message }
-         </p>
-       </main>
-        <PageTitle />
+          <main>
+            <p>
+              { apiResponse.message }
+            </p>
+          </main>
+          <PageTitle />
         </header>
       </div>
     );
