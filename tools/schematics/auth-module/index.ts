@@ -18,14 +18,14 @@ export default function(schema: any): Rule {
 
     
     externalSchematic('@schematics/angular', 'module', {
-      project: schema.project,
       name: schema.name,
+      project: schema.project,
       routing: true,
       module: 'app.module.ts'
     }),
     externalSchematic('@schematics/angular', 'service', {
-      project: schema.project,
       name: schema.name,
+      project: schema.project,
       path: path.join(
         'apps',
         schema.project,
@@ -36,8 +36,8 @@ export default function(schema: any): Rule {
         )
     }),
     externalSchematic('@schematics/angular', 'guard', {
-      project: schema.project,
       name: schema.name,
+      project: schema.project,
       path: path.join(
         'apps',
         schema.project,
