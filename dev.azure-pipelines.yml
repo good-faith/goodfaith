@@ -32,7 +32,6 @@ steps:
   displayName: 'Cypress verify'
 - script: |
     npm run c-start 2>&1 &
-    ng serve tickets-api 2>&1 &
     npm run e2e
   displayName: 'Run Cypress tests'
 
