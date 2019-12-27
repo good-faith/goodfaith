@@ -1,15 +1,17 @@
 import { Injectable } from '@nestjs/common';
-import { Items } from '@goodfaith/data'
+import { Item } from '@goodfaith/data'
 
 @Injectable()
 export class ItemsService {
-    private readonly items: Items[] = [{"id": 1,"item":'Pizza'}, {"id": 2,"item":'Coke'}];
+    private readonly items: Item[] = [];
 
-  findAll(): Items[] {
+  findAll(): Item[] {
     return this.items;
   }
 
-  create(item: Items) {
+  create(item: Item) {
     this.items.push(item);
   }
 }
+
+// {"id": 1,"name":'Pizza'}, {"id": 2,"item":'Coke'}
