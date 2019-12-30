@@ -8,17 +8,28 @@ import * as dotenv from 'dotenv';
 // const dbConfig = config.get('db');
 dotenv.config();
 
+
+
 export const typeOrmConfig: TypeOrmModuleOptions = {
-    type: 'postgres',
-    host: 'goodfaith-graphql.postgres.database.azure.com',
-    port: 5432, 
-    username: 'goodgod@goodfaith-graphql',
-    database: 'auth-o', 
-    password: 'qwerty123!',
-    ssl: true,
+    type: process.env.DB_TYPE as any, 
+    host: process.env.PGSQL_HOST,
+    port: process.env.PGSQL_PORT as unknown as number, 
+    username: process.env.PGSQL_USERNAME,
+    database: process.env.PGSQL_DB_NAME, 
+    password: process.env.PGSQL_PASSWORD,
+    ssl: process.env.PGSQL_SSL,
     entities: [Item],
-    synchronize: true 
+    synchronize: process.env.PGSQL_SYNC as unknown as boolean
 };
+
+// DB_TYPE=postgres
+// PGSQL_HOST=goodfaith-graphql.postgres.database.azure.com
+// PGSQL_PORT=5432
+// PGSQL_USERNAME=goodgod@goodfaith-graphql
+// PGSQL_DB_NAME=auth-o
+// PGSQL_PASSWORD=qwerty123!
+// PGSQL_SSL=true
+// PGSQL_SYNC=true
 
 // export const typeOrmConfig: TypeOrmModuleOptions = {
 //     type: dbConfig.type,
