@@ -1,6 +1,6 @@
 // import { User } from './../auth/user.entity';
 // import { Task } from './../task/task-entity';
-import { Item } from '../items/item.entity';
+import { ItemEntity } from '../items/item.entity';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 // import * as config from 'config';
 import * as dotenv from 'dotenv';
@@ -18,7 +18,7 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     database: process.env.PGSQL_DB_NAME, 
     password: process.env.PGSQL_PASSWORD,
     ssl: process.env.PGSQL_SSL,
-    entities: [Item],
+    entities: [ItemEntity],
     synchronize: process.env.PGSQL_SYNC as unknown as boolean
 };
 

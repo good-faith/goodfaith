@@ -1,18 +1,38 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, Put, UseGuards, Param } from '@nestjs/common';
 import { ItemsService } from './items.service';
-import { Item } from '@goodfaith/data';
+import { AuthGuard } from '@nestjs/passport';
+// import { Item } from '@goodfaith/data';
+import { ItemEntity } from './item.entity';
 
 @Controller('items')
 export class ItemsController {
     constructor(private readonly itemsService: ItemsService){}
 
     @Get()
-    async findAll(): Promise<Item[]> {
+    async findAll(): Promise<ItemEntity[]> {
         return this.itemsService.findAll();
     }
 
+    @Get(':id')
+    async find(@Param('id') id: number): Promise<ItemEntity> {
+        return this.itemsService.find(id);
+    }
+
+    @UseGuards(AuthGuard('jwt'))
     @Post()
-    async create(@Body() item: Item) {
-        return 'Not yet implemented';
+    create(@Body('item') item: ItemEntity) {
+        this.itemsService.create(item);
+    }
+
+    @UseGuards(AuthGuard('jwt'))
+    @Put()
+    update(@Body('item') item: ItemEntity) {
+        this.itemsService.update(item);
+    }
+
+    @UseGuards(AuthGuard('jwt'))
+    @Delete(':id')
+    delete(@Param('id') id: number) {
+        this.itemsService.delete(id);
     }
 }
