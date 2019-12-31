@@ -14,7 +14,7 @@ import { AuthModule } from '../auth/auth.module';
     TypeOrmModule.forRoot(typeOrmConfig),
     TaskModule,
     ItemsModule,
-    AuthModule
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
