@@ -22,15 +22,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     synchronize: process.env.PGSQL_SYNC as unknown as boolean
 };
 
-// DB_TYPE=postgres
-// PGSQL_HOST=goodfaith-graphql.postgres.database.azure.com
-// PGSQL_PORT=5432
-// PGSQL_USERNAME=goodgod@goodfaith-graphql
-// PGSQL_DB_NAME=auth-o
-// PGSQL_PASSWORD=qwerty123!
-// PGSQL_SSL=true
-// PGSQL_SYNC=true
-
 // export const typeOrmConfig: TypeOrmModuleOptions = {
 //     type: dbConfig.type,
 //     host: dbConfig.host,
