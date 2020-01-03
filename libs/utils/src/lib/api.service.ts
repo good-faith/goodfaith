@@ -16,9 +16,9 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getDragons$(): Observable<any[]> {
+  getItems$(): Observable<any[]> {
     return this.http
-      .get<any[]>(`${environment.auth.AUDIENCE}tasks`)
+      .get<any[]>(`${environment.auth.AUDIENCE}items`)
       .pipe(
         catchError(err => throwError(err))
       );

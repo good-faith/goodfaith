@@ -44,16 +44,6 @@
     },
     "client-auth": {
       "tags": []
-    },
-    "tickets": {
-      "tags": []
-    },
-    "tickets-e2e": {
-      "tags": [],
-      "implicitDependencies": ["tickets"]
-    },
-    "tickets-api": {
-      "tags": []
     }
   }
 }

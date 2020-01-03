@@ -16,14 +16,14 @@ async function bootstrap() {
   const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
 
-
+  // app.enableCors();
 
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   
   const port = process.env.PORT || 3333;
   await app.listen(port);
-  logger.log(`Accepting requests from origin ${port}/${globalPrefix}`);
+  logger.log(`Application listening on port: ${port}/${globalPrefix}`);
 }
 
 bootstrap();
