@@ -7,7 +7,7 @@ import * as auth0 from 'auth0-js';
  *  process.env for environment variables
  * 
  * */  
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../apps/todos/src/environments/environment';
 import { Router } from '@angular/router';
 
 @Injectable()

@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
  * use process.env for environment variables
  * 
  */
-import { environment } from './../environments/environment';
+import { environment } from '../../../../apps/todos/src/environments/environment';
 
 @Injectable()
 export class ApiService {
