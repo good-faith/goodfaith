@@ -1,28 +1,17 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Todo } from '@goodfaith/data';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../../libs/auth/src/lib/auth.service';
 
 @Component({
-  selector: 'goodfaith-root',
+  selector: 'goodfaith-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+export class AppComponent implements OnInit {
+  constructor(private auth: AuthService) {}
 
-export class AppComponent {
-  todos: Todo[] = [];
-
-  constructor(private http: HttpClient) {
-    this.fetch();
-  }
-
-  fetch() {
-    this.http.get<Todo[]>('/api/todos').subscribe(t => (this.todos = t));
-  }
-
-
-  addTodo() {
-    this.todos.push({
-      title: `New todo ${Math.floor(Math.random() * 1000)}`
-    });
+  ngOnInit() {
+    // If there is an active session on the
+    // authorization server, get tokens
+    this.auth.renewAuth();
   }
 }
