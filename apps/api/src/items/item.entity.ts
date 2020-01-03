@@ -1,7 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
 
-
-
 @Entity('item')
 export class ItemEntity extends BaseEntity {
 
