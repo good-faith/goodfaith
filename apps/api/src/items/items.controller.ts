@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Delete, Put, UseGuards, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete, Put, UseGuards, Param, Logger } from '@nestjs/common';
 import { ItemsService } from './items.service';
 import { AuthGuard } from '@nestjs/passport';
 // import { Item } from '@goodfaith/data';
@@ -6,6 +6,7 @@ import { ItemEntity } from './item.entity';
 
 @Controller('items')
 export class ItemsController {
+    private logger = new Logger('ItemsController')
     constructor(private readonly itemsService: ItemsService){}
 
     @Get()
