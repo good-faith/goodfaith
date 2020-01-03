@@ -12,8 +12,6 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-console.log(process.env.PORT)
-
 async function bootstrap() {
   const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
