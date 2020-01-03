@@ -4,8 +4,10 @@ import { AuthGuard } from '../../../../libs/auth/src/lib/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from '../../../../libs/auth/src/lib/secure.interceptor';
 
+// tslint:disable-next-line: nx-enforce-module-boundaries
 import { HomeComponent } from '../../../../libs/ui/src/lib/home/home.component';
 import { CallbackComponent } from '../../../../libs/utils/src';
+// tslint:disable-next-line: nx-enforce-module-boundaries
 import { ProfileComponent } from '../../../../libs/ui/src/lib/profile/profile.component';
 
 @NgModule({

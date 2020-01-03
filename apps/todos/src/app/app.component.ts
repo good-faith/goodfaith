@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../../libs/auth/src/lib/auth.service';
 
 @Component({
-  selector: 'goodfaith-app-root',
+  // tslint:disable-next-line: component-selector
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

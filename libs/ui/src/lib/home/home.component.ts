@@ -5,7 +5,8 @@ import { ApiService } from '../../../../../libs/utils/src/lib/api.service';
 import { AuthService } from '../../../../auth/src/lib/auth.service';
 
 @Component({
-  selector: 'goodfaith-app-home',
+  // tslint:disable-next-line: component-selector
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
