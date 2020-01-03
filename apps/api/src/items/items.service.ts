@@ -2,7 +2,9 @@ import { Injectable } from '@nestjs/common';
 //import { Item } from '@goodfaith/data'
 import { ItemEntity } from './item.entity'
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, DeleteResult } from 'typeorm';
+
+type TaskUpdate = Pick<ItemEntity, 'id'>
 
 @Injectable()
 export class ItemsService {
@@ -17,7 +19,7 @@ export class ItemsService {
     return items
   }
 
-  find(id: number): ItemEntity {
+  find(id: number) {
     const record: ItemEntity = this.itemsRepository.find[id];
 
     if (record) {
@@ -27,23 +29,24 @@ export class ItemsService {
     throw new Error('No record found');
   }
 
-  update(updatedItem: ItemEntity) {
-    if (this.itemsRepository[updatedItem.id]) {
-      this.itemsRepository[updatedItem.id] = updatedItem;
+  update(updateItem: TaskUpdate): Promise<ItemEntity> {
+    if (this.itemsRepository[updateItem.id]) {
+      this.itemsRepository[updateItem.id] = updateItem;
       return;
     }
 
     throw new Error('No record found to update');
   }
 
-  delete(id: number) {
-    const record: ItemEntity = this.itemsRepository[id];
+  async delete(id: number): Promise<DeleteResult> {
+    const record = await this.itemsRepository.delete[id];
 
     if (record) {
       delete this.itemsRepository[id];
       return;
     }
 
+    return record
   }
 
   create(item: ItemEntity) {
