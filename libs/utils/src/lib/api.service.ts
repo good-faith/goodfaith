@@ -16,7 +16,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getDragons$(): Observable<any[]> {
+  getTasks$(): Observable<any[]> {
     return this.http
       .get<any[]>(`${environment.auth.AUDIENCE}tasks`)
       .pipe(
