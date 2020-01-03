@@ -57,6 +57,7 @@
     "@nrwl/workspace": "8.9.0",
     "@nstudio/schematics": "^8.0.15",
     "ajv": "^6.10.0",
+    "auth0-js": "^9.12.1",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.0",
