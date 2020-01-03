@@ -5,6 +5,6 @@ import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [HomeComponent, ProfileComponent],
-  exports: [HomeComponent]
+  exports: [HomeComponent, ProfileComponent]
 })
 export class UiModule {}
