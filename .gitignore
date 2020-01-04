@@ -40,4 +40,9 @@ Thumbs.db
 
 */*/config/*
 
+!environment.ts
+!environment.prod.ts
+
+
+
 .env

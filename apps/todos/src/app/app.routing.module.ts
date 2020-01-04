@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthGuard } from '../../../../libs/auth/src/lib/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from '../../../../libs/auth/src/lib/auth.guard';
 import { InterceptorService } from '../../../../libs/auth/src/lib/secure.interceptor';
 
 // tslint:disable-next-line: nx-enforce-module-boundaries
