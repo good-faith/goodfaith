@@ -30,13 +30,7 @@
       ],
       "@goodfaith/admin/dashboard": [
         "libs/admin/dashboard/src/index.ts"
-      ],
-      "@goodfaith/client/home": [
-        "libs/client/home/src/index.ts"
-      ],
-      "@goodfaith/client/auth": [
-        "libs/client/auth/src/index.ts"
-      ],
+      ]
     },
     "rootDir": "."
   },
