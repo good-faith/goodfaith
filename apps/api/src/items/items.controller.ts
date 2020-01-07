@@ -2,36 +2,37 @@ import { Controller, Get, Post, Body, Delete, Put, UseGuards, Param, Logger } fr
 import { ItemsService } from './items.service';
 import { AuthGuard } from '@nestjs/passport';
 // import { Item } from '@goodfaith/data';
-import { ItemEntity } from './item.entity';
+import { Item } from './item.entity';
+import { CreateItemDto } from './dto/createItemDto';
 
 @Controller('items')
 export class ItemsController {
     private logger = new Logger('ItemsController')
-    constructor(private readonly itemsService: ItemsService){}
+    constructor(private itemsService: ItemsService){}
 
     @Get()
-    async findAll(): Promise<ItemEntity[]> {
+    async findAll(): Promise<Item[]> {
         return this.itemsService.findAll();
     }
 
     @Get(':id')
-    async find(@Param('id') id: number): Promise<ItemEntity> {
+    async find(@Param('id') id: number): Promise<Item> {
         return this.itemsService.find(id);
     }
 
     @UseGuards(AuthGuard('jwt'))
     @Post()
-    create(@Body('item') item: ItemEntity) {
-        this.itemsService.create(item);
+    createItem(@Body() createTaskDto: CreateItemDto): Promise<Item> {
+       return this.itemsService.createItem(createTaskDto);
     }
 
-    @UseGuards(AuthGuard('jwt'))
+    // @UseGuards(AuthGuard('jwt'))
     @Put()
-    update(@Body('item') item: ItemEntity) {
+    update(@Body('item') item: Item) {
         this.itemsService.update(item);
     }
 
-    @UseGuards(AuthGuard('jwt'))
+    // @UseGuards(AuthGuard('jwt'))
     @Delete(':id')
     delete(@Param('id') id: number) {
         this.itemsService.delete(id);

@@ -1,26 +1,27 @@
 import { Injectable } from '@nestjs/common';
 //import { Item } from '@goodfaith/data'
-import { ItemEntity } from './item.entity'
+import { Item } from './item.entity'
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DeleteResult } from 'typeorm';
+import { CreateItemDto } from './dto/createItemDto'
 
-type TaskUpdate = Pick<ItemEntity, 'id'>
+type TaskUpdate = Pick<Item, 'id'>
 
 @Injectable()
 export class ItemsService {
    constructor(
-     @InjectRepository(ItemEntity) 
-     private itemsRepository: Repository<ItemEntity>
+     @InjectRepository(Item) 
+     private itemsRepository: Repository<Item>
      ){} 
   // private readonly items: Item[] = [];
 
-  async findAll(): Promise<ItemEntity[]> {
+  async findAll(): Promise<Item[]> {
     const items = await this.itemsRepository.find()
     return items
   }
 
   find(id: number) {
-    const record: ItemEntity = this.itemsRepository.find[id];
+    const record: Item = this.itemsRepository.find[id];
 
     if (record) {
       return record;
@@ -29,7 +30,7 @@ export class ItemsService {
     throw new Error('No record found');
   }
 
-  update(updateItem: TaskUpdate): Promise<ItemEntity> {
+  update(updateItem: TaskUpdate): Promise<Item> {
     if (this.itemsRepository[updateItem.id]) {
       this.itemsRepository[updateItem.id] = updateItem;
       return;
@@ -49,12 +50,14 @@ export class ItemsService {
     return record
   }
 
-  create(item: ItemEntity) {
-    const id = new Date().valueOf();
-    this.itemsRepository[id] = {
-      ...item,
-      id,
-    };
+  async createItem(createItemDto: CreateItemDto): Promise<Item> {
+    const { name } = createItemDto;
+
+    const item = new Item();
+    item.name = name
+    await item.save();
+
+    return item;
   }
 }
 
