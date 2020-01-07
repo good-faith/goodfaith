@@ -9,7 +9,7 @@
   <button (click)="auth.logout()">Log Out</button>
 
   <div *ngIf="(items$ | async) as items">
-    <h2>Here Be Dragons</h2>
+    <h2>Here Are Your Items</h2>
     <ul>
       <li *ngFor="let item of items">
         {{ item.id }} - {{ item.name }}

@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, bindNodeCallback } from 'rxjs';
 import * as auth0 from 'auth0-js';
 
-/** TODO 
+/**   
+ * 
+ *              TODO 
  * 
  *  process.env for environment variables
  * 
  * */  
 import { environment } from '../../../../apps/todos/src/environments/environment';
 import { Router } from '@angular/router';
-
 @Injectable()
 export class AuthService {
   // Create Auth0 web auth instance
