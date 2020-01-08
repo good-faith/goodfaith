@@ -18,7 +18,7 @@ jobs:
           install: false
           # start server and wait for N seconds for it to respond before running tests.
           start: npm run c-test
-          wait-on: 'http://localhost:7000'
+          wait-on: 'http://localhost:3333'
           wait-on-timeout: 40 # seconds
           # Cypress tests and config file are in "e2e" folder
           working-directory: todos-e2e
