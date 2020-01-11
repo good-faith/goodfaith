@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app.routing.module'
-import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app.routing.module'
 
-import { UiModule } from '@goodfaith/ui';
+import { ProfileComponent, HomeComponent } from '@goodfaith/ui';
+// tslint:disable-next-line: nx-enforce-module-boundaries
 import { ApiService } from '../../../../libs/utils/src';
 import { AuthService } from '../../../../libs/auth/src/lib/auth.service';
 
+import { AppComponent } from './app.component';
 import { CallbackComponent } from '../../../../libs/utils/src';
 
 
@@ -16,12 +17,13 @@ import { CallbackComponent } from '../../../../libs/utils/src';
   declarations: [
     AppComponent, 
     CallbackComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule, 
-    HttpClientModule, 
-    UiModule, 
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [
     ApiService,
