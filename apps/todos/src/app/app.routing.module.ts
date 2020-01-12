@@ -29,7 +29,7 @@ import { ProfileComponent } from '../../../../libs/ui/src/lib/profile/profile.co
         component: HomeComponent,
         pathMatch: 'full'
       }
-    ], { enableTracing: true })
+    ])
   ],
   providers: [
     AuthGuard,
