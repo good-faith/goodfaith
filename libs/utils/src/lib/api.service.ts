@@ -19,21 +19,19 @@ export class ApiService {
 
   getItems$(): Observable<any[]> {
     return this.http
-      .get<any[]>(`${environment.auth.AUDIENCE}items`, {
-        headers: this.headers,
-      })
+      .get<any[]>(`${environment.auth.AUDIENCE}items`)
       .pipe(
         catchError(err => throwError(err))
       );
   }
 
-  get headers(): HttpHeaders {
-    const headersConfig = {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    };
+  // get headers(): HttpHeaders {
+  //   const headersConfig = {
+  //     'Content-Type': 'application/json',
+  //     Accept: 'application/json',
+  //   };
 
-    return new HttpHeaders(headersConfig);
-  }
+  //   return new HttpHeaders(headersConfig);
+  // }
 
 }
