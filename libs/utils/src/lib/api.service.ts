@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { throwError, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
 /** 
  * 
  *  #TODO
+ * 
  * use process.env for environment variables
  * 
  */
@@ -18,10 +19,21 @@ export class ApiService {
 
   getItems$(): Observable<any[]> {
     return this.http
-      .get<any[]>(`${environment.auth.AUDIENCE}items`)
+      .get<any[]>(`${environment.auth.AUDIENCE}items`, {
+        headers: this.headers,
+      })
       .pipe(
         catchError(err => throwError(err))
       );
+  }
+
+  get headers(): HttpHeaders {
+    const headersConfig = {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    };
+
+    return new HttpHeaders(headersConfig);
   }
 
 }

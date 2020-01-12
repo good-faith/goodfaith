@@ -10,13 +10,13 @@ import { Logger } from '@nestjs/common';
 
 import * as dotenv from 'dotenv';
 
-dotenv.config();
 
 async function bootstrap() {
+  dotenv.config();
   const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
 
-  app.enableCors();
+  app.enableCors({origin: process.env.ORIGIN_TODO});
 
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
