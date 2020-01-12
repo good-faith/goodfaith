@@ -1,3 +1,5 @@
+FYI - These are all notes that would normally be kept in a place similar to azure-devops **BOARDS** for development team
+
 # TODOS and UPDATES for Development
 
 - [x] Get profiles link working
