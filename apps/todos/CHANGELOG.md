@@ -229,6 +229,8 @@ This starter project is inspired by angular Auth0 aside project [angular-auth0-a
 2020-01-13 01:20:04.085 INFO  - Initiating warmup requhttps://gist.github.com/good-faith/6f55da77e0f5cb1ec344f2f08adfa92best to container good-faith_0_4ca36440_middleware for site good-faith
 ```
 
-Tried to deploy through azure-pipelines connected to hithub and got an error.
+### Tried to deploy through azure-pipelines connected to hithub and got an error.
 
 See [gist](https://gist.github.com/good-faith/6f55da77e0f5cb1ec344f2f08adfa92b) for logs. 
+
+### Added environment variables to Azure to see if it would resole error
