@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/GoodFaithParadigm8/goodfaith/tree/master.svg?style=svg)](https://circleci.com/gh/GoodFaithParadigm8/goodfaith/tree/master)
+[![Build Status](https://dev.azure.com/goodfaith/MyProject/_apis/build/status/good-faith%20-%20CI?branchName=master)](https://dev.azure.com/goodfaith/MyProject/_build/latest?definitionId=1&branchName=master)
 
 # Goodfaith
 
