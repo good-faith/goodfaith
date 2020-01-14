@@ -1,5 +1,3 @@
-[![Build Status](https://dev.azure.com/goodfaith/MyProject/_apis/build/status/good-faith%20-%20CI?branchName=master)](https://dev.azure.com/goodfaith/MyProject/_build/latest?definitionId=1&branchName=master)
-
 # Goodfaith
 
 This project was generated using [Nx](https://nx.dev).
