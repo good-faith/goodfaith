@@ -1,6 +1,5 @@
 FYI - These are all notes that would normally be kept in a place similar to azure-devops **BOARDS** for development team
 
-Open issue for 
 
 # TODOS and UPDATES for Development
 
@@ -228,7 +227,7 @@ This starter project is inspired by angular Auth0 aside project [angular-auth0-a
 
 
 2020-01-13 01:20:04.083 ERROR - Container good-faith_0_4ca36440 for site good-faith has exited, failing site start
-2020-01-13 01:20:04.085 INFO  - Initiating warmup requhttps://gist.github.com/good-faith/6f55da77e0f5cb1ec344f2f08adfa92best to container good-faith_0_4ca36440_middleware for site good-faith
+2020-01-13 01:20:04.085 INFO  - Initiating warmup request to container good-faith_0_4ca36440_middleware for site good-faith
 ```
 
 ### Tried to deploy through azure-pipelines connected to github and got an error.
