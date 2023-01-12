@@ -61,7 +61,7 @@
     "auth0-js": "^9.12.1",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.11.0",
+    "class-validator": "^0.14.0",
     "config": "^3.2.4",
     "core-js": "^2.5.4",
     "document-register-element": "1.13.1",
